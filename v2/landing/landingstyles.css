@@ -1,0 +1,285 @@
+body {
+  height: 100vh;
+  margin: 0px;
+  overflow: hidden;
+  cursor: crosshair;
+  background-color: black;
+}
+
+canvas {
+  z-index: -1200;
+  display: block;
+  position: absolute;
+  top: 0;
+}
+
+h1 {
+  color: black;
+  font-family: "halyard-display", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  text-align: center;
+  font-size: 60px;
+  -webkit-text-stroke: 1px white;
+}
+
+h2 {
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 40px;
+  color: rgb(0, 0, 0);
+  z-index: 1000;
+}
+
+h3 {
+  color: white;
+  position: absolute;
+  font-size: 40px;
+  font-family: "kepler-std-display", serif;
+  font-weight: 400;
+  font-style: normal;
+  display: none;
+}
+
+h5 {
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 16px;
+  color: rgb(255, 255, 255);
+  z-index: 1000;
+  top: -50px;
+  position: absolute;
+}
+
+.hoveringText {
+  position: absolute;
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 16px;
+  color: rgb(43, 255, 0);
+  display: none;
+  z-index: 1000;
+}
+
+#gem:hover > #gemtext {
+  display: block;
+}
+
+#lstd:hover > #lstdtext {
+  display: block;
+}
+
+#landi:hover > #landitext {
+  display: block;
+}
+
+#raul:hover > #raultext {
+  display: block;
+}
+
+#gg:hover > #ggtext {
+  display: block;
+}
+
+#gallery {
+  height: 75vmax;
+  width: 95vmax;
+  position: relative;
+}
+
+.block {
+  position: absolute;
+  width: 30%;
+  height: 30%;
+  z-index: 1;
+}
+
+.block:hover {
+  z-index: 1.5;
+}
+
+.block:nth-child(1) {
+  top: 65%;
+  left: 60%;
+  background: url("img/gemspa.png") no-repeat 50% 50%;
+  background-size: cover;
+}
+
+.block:nth-child(2) {
+  top: 15%;
+  right: 0%;
+  background: url("img/lstd.png") no-repeat 50% 50%;
+  background-size: cover;
+}
+
+.block:nth-child(3) {
+  top: 15%;
+  left: 0%;
+  background: url("img/landis.png") no-repeat 50% 50%;
+  background-size: cover;
+}
+.block:nth-child(4) {
+  top: 55%;
+  left: 7%;
+  background: url("img/raul.png") no-repeat 50% 50%;
+  background-size: cover;
+}
+.block:nth-child(5) {
+  top: 2%;
+  left: 20%;
+  background: url("img/goldengate.png") no-repeat 50% 50%;
+  background-size: cover;
+}
+
+.checkbox {
+  display: none;
+}
+
+.button {
+  position: relative;
+  background-color: white;
+  height: 2rem;
+  width: 2rem;
+  border-radius: 50%;
+  position: fixed;
+  top: 5vh;
+  right: 5vw;
+  z-index: 2000;
+  box-shadow: 0 1rem 3rem black;
+  text-align: center;
+  cursor: pointer;
+}
+
+.background {
+  height: 2rem;
+  width: 2rem;
+  border-radius: 50%;
+  position: fixed;
+  top: 5vh;
+  right: 5vw;
+  background-image: radial-gradient(rgb(255, 255, 255), rgb(255, 255, 255));
+  z-index: 1000;
+
+  transition: transform 0.8s cubic-bezier(0.86, 0, 0.07, 1);
+}
+
+.nav {
+  width: 100vw;
+  position: fixed;
+  top: 35vh;
+  left: 20vw;
+  z-index: 1500;
+  opacity: 0;
+  width: 0;
+  transition: all 0.8s;
+}
+
+.list {
+  position: absolute;
+  top: 30%;
+  left: 30%;
+  transform: translate(-50%, -50%);
+  list-style: none;
+  text-align: left;
+  width: 40%;
+}
+
+.item {
+  margin: 1rem;
+  font-size: 36px;
+}
+
+h2:hover {
+  color: rgb(21, 255, 0);
+}
+
+.link:link,
+.link:visited {
+  display: inline-block;
+  font-size: 3rem;
+  font-weight: 300;
+  padding: 1rem 2rem;
+  color: white;
+  text-decoration: none;
+  text-transform: uppercase;
+  background-image: linear-gradient(
+    120deg,
+    transparent 0%,
+    transparent 50%,
+    white 50%
+  );
+  background-size: 220%;
+  transition: all 0.4s;
+}
+
+.link:hover,
+.link:active {
+  color: rgb(51, 255, 0);
+  cursor: pointer;
+}
+
+/* functionality */
+.checkbox:checked ~ .background {
+  transform: scale(80);
+}
+.checkbox:checked ~ .nav {
+  opacity: 1;
+  width: 100%;
+  right: 0;
+}
+
+/*  */
+/* styling hamb ICON */
+.icon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.icon,
+.icon::before,
+.icon::after {
+  width: 3rem;
+  height: 2px;
+  background-color: rgb(0, 0, 0);
+  display: inline-block;
+}
+
+.icon::before,
+.icon::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  transition: all 0.2s;
+}
+
+.icon::before {
+  top: -0.8rem;
+}
+.icon::after {
+  top: 0.8rem;
+}
+
+.button:hover icon:before {
+  top: -1rem;
+}
+.button:hover icon::after {
+  top: 1rem;
+}
+
+.checkbox:checked + .button .icon {
+  background-color: transparent;
+}
+
+.checkbox:checked + .button .icon::before {
+  top: 0;
+  transform: rotate(135deg);
+}
+.checkbox:checked + .button .icon::after {
+  top: 0;
+  transform: rotate(-135deg);
+}

@@ -1,0 +1,282 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+canvas {
+  display: block;
+  z-index: 10;
+  margin-top: 0;
+}
+
+body {
+  background-color: rgb(234, 245, 255);
+  /* margin: 7%; */
+  margin: 0;
+}
+
+img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+#footer {
+  height: 0;
+}
+
+#top {
+  color: rgb(255, 250, 224);
+  margin-top: 0;
+}
+
+#maindiv {
+  border: 1px solid black;
+  color: rgb(234, 245, 255);
+  padding: 0;
+  margin: 0;
+  background-color: rgb(23, 39, 73);
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+#maindiv:hover {
+  background-color: rgb(234, 245, 255);
+  color: rgb(23, 39, 73);
+}
+
+a:hover {
+  color: rgb(23, 39, 73);
+}
+
+a {
+  color: black;
+  text-decoration: none;
+}
+
+#div1 {
+  display: inline-block;
+  animation: marquee 14s linear infinite;
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+@keyframes marquee2 {
+  from {
+    transform: translateX(0%);
+  }
+  to {
+    transform: translateX(-200%);
+  }
+}
+
+#container {
+  display: grid;
+  grid-auto-flow: row dense;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr;
+  gap: 0px 0px;
+  grid-template-areas: ". .";
+}
+
+.containertwo {
+  display: grid;
+  grid-auto-flow: row dense;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr;
+  gap: 10px 10px;
+  grid-template-areas: ". . .";
+}
+#left {
+  float: left;
+  width: 40%;
+  margin-left: 10%;
+}
+
+#right {
+  float: right;
+  width: 40%;
+  margin-right: 5%;
+  margin-top: 25px;
+}
+
+header {
+  position: fixed;
+  background-color: rgb(234, 245, 255);
+  border: 1px solid black;
+  width: 100%;
+}
+/* header:hover {
+  background-color: rgb(255, 0, 0);
+  color: rgb(255, 250, 224);
+} */
+
+h1 {
+  font-family: kepler-std-condensed-display, serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 70px;
+  color: rgb(23, 39, 73);
+  font-size: 28px;
+}
+
+h3 {
+  font-family: kepler-std-condensed-display, serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 25px;
+  color: rgb(23, 39, 73);
+  margin-top: 20px;
+}
+
+h4 {
+  font-family: aktiv-grotesk, sans-serif;
+  font-weight: 300;
+  font-style: normal;
+  font-size: 20px;
+  color: rgb(23, 39, 73);
+  margin-top: 20px;
+}
+
+h5 {
+  font-family: aktiv-grotesk, sans-serif;
+  font-weight: 300;
+  font-style: normal;
+  font-size: 16px;
+  color: rgb(188, 202, 231);
+  margin-top: 10px;
+}
+
+#first {
+  margin-top: 0;
+  padding-top: 5%;
+  padding: 20%;
+  border: 1px solid rgb(158, 158, 153);
+}
+
+#first:hover {
+  background-color: rgb(207, 207, 205);
+  color: rgb(255, 250, 224);
+}
+
+#second {
+  margin-top: 0;
+  padding-top: 5%;
+  padding: 20%;
+  border: 1px solid rgb(158, 158, 153);
+}
+
+#second:hover {
+  background-color: rgb(207, 207, 205);
+  color: rgb(255, 250, 224);
+}
+
+#third {
+  padding: 20%;
+  border: 1px solid rgb(158, 158, 153);
+}
+
+#third:hover {
+  background-color: rgb(207, 207, 205);
+  color: rgb(255, 250, 224);
+}
+
+#fourth {
+  padding: 20%;
+  border: 1px solid rgb(158, 158, 153);
+}
+
+#fourth:hover {
+  background-color: rgb(207, 207, 205);
+  color: rgb(255, 250, 224);
+}
+
+#fifth {
+  border: 1px solid rgb(158, 158, 153);
+}
+
+#fifth:hover {
+  background-color: rgb(207, 207, 205);
+  color: rgb(255, 250, 224);
+}
+
+#sixth {
+  padding: 20%;
+  border: 1px solid rgb(158, 158, 153);
+}
+
+#sixth:hover {
+  background-color: rgb(207, 207, 205);
+  color: rgb(255, 250, 224);
+}
+
+#seventh {
+  padding: 20%;
+  border: 1px solid rgb(158, 158, 153);
+}
+
+#seventh:hover {
+  background-color: rgb(207, 207, 205);
+  color: rgb(255, 250, 224);
+}
+
+#eigth {
+  padding: 20%;
+  border: 1px solid rgb(158, 158, 153);
+}
+
+#eigth:hover {
+  background-color: rgb(207, 207, 205);
+  color: rgb(255, 250, 224);
+}
+
+#ninth {
+  border: 1px solid rgb(158, 158, 153);
+}
+
+#ninth:hover {
+  background-color: rgb(207, 207, 205);
+  color: rgb(255, 250, 224);
+}
+
+#tenth {
+  border: 1px solid rgb(158, 158, 153);
+}
+
+#tenth:hover {
+  background-color: rgb(207, 207, 205);
+  color: rgb(255, 250, 224);
+}
+
+@media only screen and (max-width: 800px) {
+  #container {
+    display: grid;
+    grid-auto-flow: row dense;
+    grid-template-columns: 1fr;
+    grid-template-rows: 2fr;
+    gap: 0px 0px;
+    grid-template-areas: ". ";
+  }
+
+  .containertwo {
+    display: grid;
+    grid-auto-flow: row dense;
+    grid-template-columns: 1fr;
+    grid-template-rows: 3fr;
+    gap: 10px 10px;
+    grid-template-areas: ". ";
+  }
+}
+
+iframe {
+  width: 100%;
+  height: 800px;
+}
