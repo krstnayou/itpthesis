@@ -96,23 +96,25 @@ a {
   grid-template-areas: ". . .";
 }
 #left {
-  float: left;
-  width: 40%;
+  /* float: left; */
+  width: 25%;
   margin-left: 10%;
+  display: inline-block;
 }
 
-#right {
-  float: right;
+#middle {
+  /* float: right; */
   width: 40%;
-  margin-right: 5%;
-  margin-top: 25px;
+  display: inline-block;
 }
 
 header {
   position: fixed;
-  background-color: rgb(234, 245, 255);
+  background-color: rgb(188, 202, 231);
   border: 1px solid black;
   width: 100%;
+  padding-bottom: 30px;
+  padding-top: 30px;
 }
 /* header:hover {
   background-color: rgb(255, 0, 0);
@@ -147,12 +149,30 @@ h4 {
 }
 
 h5 {
+  font-family: kepler-std-condensed-display, serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 70px;
+  color: rgb(188, 202, 231);
+  font-size: 28px;
+}
+
+h6 {
+  font-family: kepler-std-condensed-display, serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 25px;
+  color: rgb(188, 202, 231);
+  margin-top: 20px;
+}
+
+p {
   font-family: aktiv-grotesk, sans-serif;
   font-weight: 300;
   font-style: normal;
-  font-size: 16px;
+  font-size: 20px;
   color: rgb(188, 202, 231);
-  margin-top: 10px;
+  margin-top: 20px;
 }
 
 #first {
