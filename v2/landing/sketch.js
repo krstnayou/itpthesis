@@ -17,6 +17,13 @@ function setup(){
 
 function draw(){
   background(0);
+  
+  for(let i=50;i<width;i+=100){
+    for(let b=50;b<height;b+=100){
+      fill(176, 223, 255);
+      ellipse(i,b,3);
+    }
+  };
 
   fill(255);
     textSize(55);
