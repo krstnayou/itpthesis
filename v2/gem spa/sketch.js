@@ -1,43 +1,42 @@
+// A p5.gui Template feat. Pacman
+
+// gui params
+
 let str = 'GEM SPA GEM SPA GEM SPA ';
 
-let startAngle =    0;     // angle where text should start
-let distanceAngle = 360;   // how far (in degrees) text will go
+let startAngle =    0;  
+let distanceAngle = 360; 
+let radius, speedSlider, sizeSlider, size;
+var SPEED = 30;
+var SIZE = 5;
 
-let radius;                // set dynamically in setup()
-let font;
-let speedSlider, sizeSlider;
-let size;
-
+var gui;
 
 function preload() {
   font = loadFont('gemspa.otf');
 }
 
-
 function setup() {
-  createCanvas(windowWidth, 800);
-  radius = min(width,height) / 5;
-  
-  // radius is set dynamically depending on the
-  // sketch's size – the min() function gives
-  // us the smaller of two numbers, ensuring
-  // that the circle won't get cut off
-  
-  // font size is also dynamic!
-  
-  speedSlider = createSlider(0,60,30);
-  speedSlider.position(50,windowHeight-100);
-  
-  sizeSlider = createSlider(-10,10,5);
-  sizeSlider.position(200,windowHeight-100);
 
+  createCanvas(windowWidth, 800);
+    radius = min(width,height) / 5;
+
+
+  // Create the GUI
+  sliderRange(0, 60, 1);
+  gui = createGui('SHAPE');
+  gui.addGlobals('SPEED');
+  
+  sliderRange(-10, 10, 1);
+  gui.addGlobals('SIZE');
+  
   
 }
 
 
 function draw() {
-  let s = speedSlider.value();
-  let size = sizeSlider.value();
+  let s = SPEED;
+  let size = SIZE;
   
   textSize(size*10);
   textFont(font);
@@ -77,16 +76,7 @@ function draw() {
 }
 
 
-// to make this sketch responsive to the window size
-// being changed, the windowResized() function calls
-// setup() so we can change the radius and font size
+// dynamically adjust the canvas to the window
 function windowResized() {
-  setup();
+  resizeCanvas(windowWidth, windowHeight);
 }
-
-function keyPressed(){
-  
-    save('my-great-proejct.png');
-  
-}
-

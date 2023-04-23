@@ -16,9 +16,44 @@
     <script src="../libraries/p5.min.js"></script>
     <script src="../libraries/p5.sound.min.js"></script>
     <script src="https://unpkg.co/gsap@3/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/circular-revealer@0.0.8/dist/index.iife.js"></script>
   </head>
   <body>
     <script src="sketch.js"></script>
+
+    <header>
+      <div>
+        <button class="header__button nav-btn-js" type="button"></button>
+        <nav class="header__nav nav-js" data-active="false">
+          <ul class="header__menu">
+            <li class="header__menu-item">
+              <a href="../gem spa/gemspa.html"><h2>(01) Gem Spa</h2></a>
+            </li>
+            <li class="header__menu-item">
+              <a href="../lstd/lstd.html"><h2>(02)Love Saves the Day</h2></a>
+            </li>
+            <li class="header__menu-item">
+              <a href="../landis/landis.html">
+                <h2>(03)Landi's Pork Store</h2>
+              </a>
+            </li>
+            <li class="header__menu-item">
+              <a href="../golden gate/goldengate.html">
+                <h2>(04)Golden Gate Fancy Fruits & Vegetables</h2>
+              </a>
+            </li>
+            <li class="header__menu-item">
+              <a href="../raul/raul.html"><h2>(05)Raul Candy Store</h2></a>
+            </li>
+            <li class="header__menu-item">
+              <a href="../support/support.html">
+                <h2>Support your local businesses</h2>
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
 
     <div id="gallery">
       <div
@@ -68,39 +103,29 @@
         </div>
       </div>
     </div>
-
-    <input type="checkbox" id="navi-toggle" class="checkbox" />
-    <label for="navi-toggle" class="button">
-      <!-- <span class="icon">&nbsp;</span> -->
-    </label>
-    <div class="background">&nbsp;</div>
-
-    <nav class="nav">
-      <ul class="list">
-        <li class="item">
-          <a class="link"><h2>(01) Gem Spa</h2></a>
-        </li>
-        <li class="item">
-          <a class="link"><h2>(02)Love Saves the Day</h2></a>
-        </li>
-        <li class="item">
-          <a class="link"><h2>(03)Landi's Pork Store</h2></a>
-        </li>
-        <li class="item">
-          <a class="link"><h2>(04)Golden Gate Fancy Fruits & Vegetables</h2></a>
-        </li>
-        <li class="item">
-          <a class="link"><h2>(05)Raul Candy Store</h2></a>
-        </li>
-        <br />
-        <li class="item">
-          <a class="link"><h2>Support your local businesses</h2></a>
-        </li>
-      </ul>
-    </nav>
   </body>
 
   <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const revealerNav = window.revealer({
+        revealElementSelector: ".nav-js",
+        options: {
+          anchorSelector: ".nav-btn-js",
+        },
+      });
+
+      const actionBtn = document.querySelector(".nav-btn-js");
+      actionBtn.addEventListener("click", () => {
+        if (!revealerNav.isRevealed()) {
+          revealerNav.reveal();
+          actionBtn.setAttribute("data-open", true);
+        } else {
+          revealerNav.hide();
+          actionBtn.setAttribute("data-open", false);
+        }
+      });
+    });
+
     const gallery = document.getElementById("gallery");
 
     window.onmousemove = (e) => {
