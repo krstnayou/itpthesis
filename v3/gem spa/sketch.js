@@ -1,52 +1,58 @@
-// A p5.gui Template feat. Pacman
-
-// gui params
 
 let str = 'GEM SPA GEM SPA GEM SPA ';
 
-let startAngle =    0;  
-let distanceAngle = 360; 
-let radius, speedSlider, sizeSlider, size;
-var SPEED = 30;
-var SIZE = 5;
+let startAngle =    0;     // angle where text should start
+let distanceAngle = 360;   // how far (in degrees) text will go
 
-var gui;
+let radius;                // set dynamically in setup()
+let font;
+let speedSlider, sizeSlider, numberSlider;
+let size;
+
 
 function preload() {
   font = loadFont('gemspa.otf');
 }
 
+
 function setup() {
-
-  createCanvas(windowWidth, 800);
-    radius = min(width,height) / 5;
-
-
-  // Create the GUI
-  sliderRange(0, 60, 1);
-  gui = createGui('SHAPE');
-  gui.addGlobals('SPEED');
+  var cnv = createCanvas(windowWidth, windowHeight);
+  cnv.parent("footer");
+  radius = min(width,height) / 5;
   
-  sliderRange(-10, 10, 1);
-  gui.addGlobals('SIZE');
   
+  speedSlider = createSlider(0,60,30);
+  speedSlider.position(1530,9550);
+  
+  sizeSlider = createSlider(-10,10,5);
+  sizeSlider.position(1530,9600);
+  
+  numberSlider = createSlider(-10,10,5);
+  numberSlider.position(1530,9650);
+
   
 }
 
 
 function draw() {
-  let s = SPEED;
-  let size = SIZE;
   
+  fill(255);
+  textFont("Space Mono")
+  textSize(18);
+  text('PRESS KEY TO DOWNLOAD',200,100);
+  
+  let s = speedSlider.value();
+  let size = sizeSlider.value();
+
   textSize(size*10);
   textFont(font);
   textAlign(CENTER, BASELINE);
   
+  
   radius = min(width,height) / size;
   
-  console.log(size);
   
-  background(100,100,s*3,s*3);
+  background(100,100,mouseX,s*3);
   frameRate(s);
   
   // the circle our text will go around
@@ -75,8 +81,12 @@ function draw() {
   startAngle = startAngle+1;
 }
 
-
-// dynamically adjust the canvas to the window
 function windowResized() {
-  resizeCanvas(windowWidth, windowHeight);
+  setup();
 }
+
+function keyPressed(){
+  
+    save('my-great-proejct.png');
+  
+};

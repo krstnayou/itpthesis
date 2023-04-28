@@ -1,9 +1,9 @@
 body {
   height: 100vh;
   margin: 0px;
-  overflow: hidden;
+  overflow-x: hidden;
   cursor: crosshair;
-  background-color: black;
+  background-color: #d8e5f3;
 }
 
 canvas {
@@ -13,14 +13,133 @@ canvas {
   top: 0;
 }
 
-h1 {
-  color: black;
-  font-family: "halyard-display", sans-serif;
+#home {
+  stroke: #000000;
+  border: 1px #000000 solid;
+  border-radius: 25px;
+  margin-top: 40px;
+  margin-left: 50px;
+  padding: 2px;
+}
+
+#go {
+  color: #000000;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 0;
+  font-size: 12px;
+}
+
+#top {
+  width: 100%;
+  padding-bottom: 30px;
+  padding-top: 30px;
+  margin-top: 30px;
+  vertical-align: top;
+}
+
+#bottom {
+  display: flex;
+  margin-top: 30vh;
+  margin-left: 50px;
+  margin-bottom: 100px;
+  justify-content: space-around;
+}
+
+#learn {
+  background-color: #c6e421;
+  border: 1px #c6e421 solid;
+  color: #000;
+  border-radius: 25px;
+  padding: 12px;
+  text-align: center;
+}
+
+#tell {
+  background-color: #c6e421;
+  border: 1px #c6e421 solid;
+  border-radius: 25px;
+  color: #000;
+  padding: 12px;
+  text-align: center;
+}
+
+#next {
+  background-color: #c6e421;
+  color: #000;
+  border: 1px #c6e421 solid;
+  border-radius: 25px;
+  padding: 12px;
+  text-align: center;
+}
+
+form {
+  text-align: center;
+}
+
+input[type="text"] {
+  padding: 10px;
+  background-color: #d8e5f3;
+  border: 0px;
+  border-bottom: 1px solid black;
+  font-size: 30px;
+  font-family: "kepler-std-display", serif;
   font-weight: 400;
   font-style: normal;
+  width: 500px;
+}
+
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+  outline: none;
+}
+
+textarea {
+  resize: vertical;
+  width: 100%;
+}
+
+#submit {
+  margin-top: 20px;
+  background-color: #d8e5f3;
+  border: 0px;
+  color: #000;
+  padding: 12px;
+  font-family: aktiv-grotesk, sans-serif;
+  font-weight: 300;
+  font-style: normal;
+  font-size: 20px;
+}
+
+#submit:hover {
+  background-color: #c6e421;
+  border-radius: 25px;
+}
+
+#output {
+  width: 300px;
+  font-family: "Space Mono", monospace;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 18px;
+  color: rgb(0, 0, 0);
+}
+
+a {
+  text-decoration: none;
+  color: #000;
+}
+
+h1 {
+  font-family: kepler-std-condensed-display, serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 100px;
+  color: rgb(0, 0, 0);
   text-align: center;
-  font-size: 60px;
-  -webkit-text-stroke: 1px white;
+  margin-top: 0;
 }
 
 h2 {
@@ -37,13 +156,11 @@ h2:hover {
 }
 
 h3 {
-  color: white;
-  position: absolute;
-  font-size: 40px;
-  font-family: "kepler-std-display", serif;
+  font-family: "Space Mono", monospace;
   font-weight: 400;
   font-style: normal;
-  display: none;
+  font-size: 18px;
+  color: rgb(0, 0, 0);
 }
 
 h4 {
@@ -64,6 +181,14 @@ h5 {
   z-index: 1000;
   top: -50px;
   position: absolute;
+}
+
+p {
+  font-family: aktiv-grotesk, sans-serif;
+  font-weight: 300;
+  font-style: normal;
+  font-size: 20px;
+  color: rgb(255, 255, 255);
 }
 
 .hoveringText {

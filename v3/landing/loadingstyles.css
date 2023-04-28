@@ -1,0 +1,37 @@
+canvas {
+  display: block;
+  z-index: 10;
+}
+
+body {
+  margin: 0;
+  height: 100vh;
+  overflow: hidden;
+  font-family: "IBM Plex Mono", monospace;
+}
+
+h1 {
+  font-size: 14px;
+  font-weight: 300;
+  color: rgb(0, 0, 0);
+  text-transform: uppercase;
+  z-index: 1000;
+}
+
+#top {
+  position: absolute;
+  top: 15vh;
+  width: 60vw;
+  margin-left: 20vw;
+}
+
+span {
+  border-right: 0.05em solid;
+  animation: caret 0.001s steps(0.001);
+}
+
+@keyframes caret {
+  50% {
+    border-color: transparent;
+  }
+}
