@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Text Input Example</title>
+    <link rel="stylesheet" href="subwayinnstoriesstyles.css" />
+    <link rel="stylesheet" href="https://use.typekit.net/why0zpc.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,300;0,400;0,500;0,600;1,300&family=Inter:wght@100;200;300;600&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/circular-revealer@0.0.8/dist/index.iife.js"></script>
+  </head>
+  <body>
+    <header>
+      <div id="home">
+        <a href="../landing/index.html"><h3 id="go">404:HOME</h3></a>
+      </div>
+
+      <div>
+        <button class="header__button nav-btn-js" type="button"></button>
+        <nav class="header__nav nav-js" data-active="false">
+          <ul class="header__menu">
+            <h4>ABOUT 404</h4>
+            <li class="header__menu-item">
+              <h2>
+                404: Forget Me Not is a project by Kristina You created as her
+                thesis project at NYU's ITP program in 2023.
+              </h2>
+              <h2>
+                It is a project about human stories, New York Cities, the
+                effects of gentrification, and preservation of memories. It
+                tells the story of five select NYC stores that have served
+                neighborhoods for countless years but have or on the verge of
+                disappearing. 404 was created as an attempt to create a space
+                for the stories that were created at these locations to live on
+                forever if only on the web.
+              </h2>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <div id="top">
+        <h1>SUBWAY INN STORIES</h1>
+      </div>
+    </div>
+    <form>
+      <div class="form__group field">
+        <label for="textInput" class="form__label">
+          <h4>ADD TO THE COLLECTION OF MEMORIES AT SUBWAY INN</h4>
+        </label>
+        <input
+          type="text"
+          class="form__field"
+          placeholder="Start Typing Here.."
+          name="textInput"
+          id="textInput"
+          required
+          oninput='this.style.height = "";this.style.height = this.scrollHeight + "px"'
+        />
+      </div>
+
+      <button id="submit" type="button" onclick="displayText()">SUBMIT</button>
+    </form>
+    <div id="output"></div>
+
+    <div id="bottom">
+      <a href="../gem spa/gemspa.html"><p id="next">NEXT</p></a>
+      <a href="subwayinn.html"><p id="tell">
+        BACK TO SUBWAY INN</p></a>
+      <p id="learn">LEARN MORE</p>
+    </div>
+
+    <script>
+      	var submissions = [];
+		var positions = [];
+
+		function displayText() {
+			var input = document.getElementById("textInput").value;
+			var now = new Date();
+			var submission = {
+				text: input,
+				date: now
+			};
+			submissions.push(submission);
+			displayAllSubmissions();
+			document.getElementById("textInput").value = "";
+		}
+
+		function displayAllSubmissions() {
+			var output = document.getElementById("output");
+			output.innerHTML = "";
+			for (var i = 0; i < submissions.length; i++) {
+				var submission = submissions[i];
+				var text = submission.text;
+				var date = submission.date;
+				var left, top, overlap;
+				do {
+					left = Math.floor(Math.random() * (window.innerWidth - 200)); // generate random left position
+					top = Math.floor(Math.random() * (window.innerHeight - 200)); // generate random top position
+					overlap = checkOverlap(left, top);
+				} while (overlap); // keep generating new positions until there is no overlap
+				var html = "<h3 class='submission' style='left: " + left + "px; top: " + top + "px;'>" + text + " - submitted on " + date.toLocaleString() + "</h3>";
+				output.innerHTML += html;
+				positions.push({
+					left: left,
+					top: top
+				});
+			}
+		}
+
+		function checkOverlap(left, top) {
+			for (var i = 0; i < positions.length; i++) {
+				var position = positions[i];
+				if (left >= position.left - 180 && left <= position.left + 180 &&
+				    top >= position.top - 80 && top <= position.top + 80) {
+					return true; // overlap detected
+				}
+			}
+			return false; // no overlap
+		}
+    </script>
+  </body>
+</html>
