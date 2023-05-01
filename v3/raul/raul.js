@@ -10,7 +10,8 @@ function preload(){
 }
 
 function setup() {
-  createCanvas(windowWidth, 800);
+  createCanvas(windowWidth, windowHeight);
+  cnv.parent("footer");
   
   fill(255);
   checkbox = createCheckbox('Filled', true);
