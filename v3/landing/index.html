@@ -25,13 +25,32 @@
     <script src="sketch.js"></script>
 
     <header>
-      <div>
-        <button class="header__button nav-btn-js" type="button"></button>
+ <button class="header__button nav-btn-js" type="button"></button>
         <nav class="header__nav nav-js" data-active="false">
           <ul class="header__menu">
-            <h4>ABOUT 404</h4>
+            <h2>INDEX</h2>
             <li class="header__menu-item">
-              <a href="../gem spa/gemspa.html"><h2>(01) Gem Spa</h2></a>
+              <a href="../gem spa/gemspa.html"><h2>(01) GEM SPA</h2></a>
+              <a href="../lstd/lstd.html"><h2>(02) LOVE SAVES THE DAY</h2></a>
+              <a href="../raul/raul.html"><h2>(03) RAUL CANDY STORE</h2></a>
+              <a href="../golden gate/goldengate.html">
+                <h2>(04) GOLDEN GATE FANCY FRUITS & VEGETABLES</h2>
+              </a>
+              <a href="../subwayinn/subwayinn.html">
+                <h2>(05) SUBWAY INN</h2>
+              </a>
+
+              <h3 id="about">
+                404: Forget Me Not is a project by Kristina You created as her
+                thesis project at NYU's ITP program in 2023. It is a project
+                about human stories, New York Cities, the effects of
+                gentrification, and preservation of memories. It tells the story
+                of five select NYC stores that have served neighborhoods for
+                countless years but have or on the verge of disappearing. 404
+                was created as an attempt to create a space for the stories that
+                were created at these locations to live on forever if only on
+                the web.
+              </h3>
             </li>
           </ul>
         </nav>
@@ -58,12 +77,12 @@
       </div>
 
       <div
-        id="landi"
+        id="subwayinn"
         class="block"
-        onclick="location.href='../landis/landis.html'"
-        onmousemove="createLandiCursor(event)"
+        onclick="location.href='../subwayinn/subwayinn.html'"
+        onmousemove="createSubwayCursor(event)"
       >
-        <div id="landitext" class="hoveringText">LANDI'S PORK STORE</div>
+        <div id="subwaytext" class="hoveringText">SUBWAY INN</div>
       </div>
 
       <div
@@ -184,8 +203,8 @@
       el.style.left = event.clientX - 1000 + "px";
     }
 
-    function createLandiCursor(event) {
-      let el = document.getElementById("landitext");
+    function createSubwayCursor(event) {
+      let el = document.getElementById("subwaytext");
       el.style.top = event.clientY + "px";
       el.style.left = event.clientX + "px";
     }
@@ -204,8 +223,8 @@
       .getElementById("lstd")
       .addEventListener("mousemove", createLstdCursor);
     document
-      .getElementById("landi")
-      .addEventListener("mousemove", createLandiCursor);
+      .getElementById("subwayinn")
+      .addEventListener("mousemove", createSubwayCursor);
     document
       .getElementById("raul")
       .addEventListener("mousemove", createRaulCursor);
