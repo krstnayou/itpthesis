@@ -1,0 +1,240 @@
+body {
+  height: 100vh;
+  margin: 0px;
+  overflow: hidden;
+  cursor: crosshair;
+  background-color: black;
+}
+
+canvas {
+  z-index: -1200;
+  display: block;
+  position: absolute;
+  top: 0;
+}
+
+h1 {
+  color: black;
+  font-family: "halyard-display", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  text-align: center;
+  font-size: 60px;
+  -webkit-text-stroke: 1px white;
+}
+
+h2 {
+  font-family: "Inter", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+  font-size: 60px;
+  color: rgb(0, 0, 0);
+  z-index: 1000;
+}
+
+h3 {
+  color: white;
+  position: absolute;
+  font-size: 40px;
+  font-family: "kepler-std-display", serif;
+  font-weight: 400;
+  font-style: normal;
+  display: none;
+}
+
+h4 {
+  font-family: aktiv-grotesk, sans-serif;
+  font-weight: 300;
+  font-style: normal;
+  font-size: 18px;
+  color: rgb(0, 0, 0);
+  margin-top: 5px;
+}
+
+h5 {
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 16px;
+  color: rgb(255, 255, 255);
+  z-index: 1000;
+  top: -50px;
+  position: absolute;
+}
+
+#about {
+  color: #000;
+  width: 85%;
+  margin-top: 100px;
+}
+
+h2:hover {
+  color: black;
+  text-decoration: underline;
+}
+
+.hoveringText {
+  position: absolute;
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 16px;
+  color: #c6e421;
+  display: none;
+  z-index: 1000;
+}
+
+#gem:hover > #gemtext {
+  display: block;
+}
+
+#lstd:hover > #lstdtext {
+  display: block;
+}
+
+#subwayinn:hover > #subwaytext {
+  display: block;
+}
+
+#raul:hover > #raultext {
+  display: block;
+}
+
+#gg:hover > #ggtext {
+  display: block;
+}
+
+#gallery {
+  height: 75vmax;
+  width: 95vmax;
+  position: relative;
+}
+
+.block {
+  position: absolute;
+  width: 30%;
+  height: 30%;
+  z-index: 1;
+}
+
+.block:hover {
+  z-index: 1.5;
+}
+
+.block:nth-child(1) {
+  top: 65%;
+  left: 60%;
+  background: url("img/gemspa.png") no-repeat 50% 50%;
+  background-size: cover;
+}
+
+.block:nth-child(2) {
+  top: 15%;
+  right: 0%;
+  background: url("img/lstd.png") no-repeat 50% 50%;
+  background-size: cover;
+}
+
+.block:nth-child(3) {
+  top: 15%;
+  left: 0%;
+  background: url("img/subway.png") no-repeat 50% 50%;
+  background-size: cover;
+}
+.block:nth-child(4) {
+  top: 55%;
+  left: 7%;
+  background: url("img/raul.png") no-repeat 50% 50%;
+  background-size: cover;
+}
+.block:nth-child(5) {
+  top: 2%;
+  left: 20%;
+  background: url("img/goldengate.png") no-repeat 50% 50%;
+  background-size: cover;
+}
+
+header {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+}
+
+.header__button {
+  z-index: 2;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #c6e421;
+  border: 0;
+  cursor: pointer;
+  position: absolute;
+  right: 0;
+  top: -18px;
+  margin: 50px;
+  outline: none;
+  animation-duration: 300ms;
+  animation-timing-function: ease;
+}
+
+.header__button[data-open="true"] {
+  background-color: #000;
+  animation-name: scale;
+}
+
+.header__button[data-open="false"] {
+  transition: background-color 250ms linear;
+}
+
+@keyframes scale {
+  from {
+    transform: scale(0);
+  }
+
+  to {
+    transform: scale(100%);
+  }
+}
+
+.header__nav {
+  background-color: #c6e421;
+  position: fixed;
+  overflow: hidden;
+  overflow-y: auto;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  padding: 40px 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  visibility: hidden;
+  clip-path: circle(var(--radius) at calc(100% - 55px) 47px);
+}
+
+.header__nav[data-active="true"] {
+  visibility: visible;
+}
+
+.header__menu {
+  padding: 0;
+  margin: 0;
+}
+
+.header__menu > .header__menu-item {
+  font-size: 12vh;
+}
+
+.header__menu > .header__menu-item:not(:last-of-type) {
+  margin-bottom: 0em;
+}
+
+.header__menu-item a {
+  letter-spacing: -4px;
+  font-weight: 300 !important;
+  color: #000;
+  text-decoration: none;
+}

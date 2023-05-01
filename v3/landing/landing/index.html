@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="icon" type="image/x-icon" href="../404.png" />
+
+    <title>FORGET ME NOT</title>
+    <link rel="stylesheet" href="landingstyles.css" />
+    <link rel="stylesheet" href="https://use.typekit.net/why0zpc.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,300;0,400;0,500;0,600;1,300&family=Inter:wght@100;200;300;400;600&display=swap"
+      rel="stylesheet"
+    />
+    <script src="../libraries/p5.min.js"></script>
+    <script src="../libraries/p5.sound.min.js"></script>
+    <script src="https://unpkg.co/gsap@3/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/circular-revealer@0.0.8/dist/index.iife.js"></script>
+  </head>
+  <body>
+    <script src="sketch.js"></script>
+
+    <header>
+ <button class="header__button nav-btn-js" type="button"></button>
+        <nav class="header__nav nav-js" data-active="false">
+          <ul class="header__menu">
+            <h2>INDEX</h2>
+            <li class="header__menu-item">
+              <a href="../gem spa/gemspa.html"><h2>(01) GEM SPA</h2></a>
+              <a href="../lstd/lstd.html"><h2>(02) LOVE SAVES THE DAY</h2></a>
+              <a href="../raul/raul.html"><h2>(03) RAUL CANDY STORE</h2></a>
+              <a href="../golden gate/goldengate.html">
+                <h2>(04) GOLDEN GATE FANCY FRUITS & VEGETABLES</h2>
+              </a>
+              <a href="../subwayinn/subwayinn.html">
+                <h2>(05) SUBWAY INN</h2>
+              </a>
+
+              <h3 id="about">
+                404: Forget Me Not is a project by Kristina You created as her
+                thesis project at NYU's ITP program in 2023. It is a project
+                about human stories, New York Cities, the effects of
+                gentrification, and preservation of memories. It tells the story
+                of five select NYC stores that have served neighborhoods for
+                countless years but have or on the verge of disappearing. 404
+                was created as an attempt to create a space for the stories that
+                were created at these locations to live on forever if only on
+                the web.
+              </h3>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <div id="gallery">
+      <div
+        id="gem"
+        class="block"
+        onclick="location.href='../gem spa/gemspa.html'"
+        onmousemove="createGemCursor(event)"
+      >
+        <div id="gemtext" class="hoveringText">GEM SPA</div>
+      </div>
+
+      <div
+        id="lstd"
+        class="block"
+        onclick="location.href='../lstd/lstd.html'"
+        onmousemove="createLstdCursor(event)"
+      >
+        <div id="lstdtext" class="hoveringText">LOVE SAVES THE DAY</div>
+      </div>
+
+      <div
+        id="subwayinn"
+        class="block"
+        onclick="location.href='../subwayinn/subwayinn.html'"
+        onmousemove="createSubwayCursor(event)"
+      >
+        <div id="subwaytext" class="hoveringText">SUBWAY INN</div>
+      </div>
+
+      <div
+        id="raul"
+        class="block"
+        onclick="location.href='../raul/raul.html'"
+        onmousemove="createRaulCursor(event)"
+      >
+        <div id="raultext" class="hoveringText">RAUL CANDY STORE</div>
+      </div>
+
+      <div
+        id="gg"
+        class="block"
+        onclick="location.href='../golden gate/goldengate.html'"
+        onmousemove="createGGCursor(event)"
+      >
+        <div id="ggtext" class="hoveringText">
+          GOLDEN GATE FANCY FRUITS & VEGETABLES
+        </div>
+      </div>
+    </div>
+  </body>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const revealerNav = window.revealer({
+        revealElementSelector: ".nav-js",
+        options: {
+          anchorSelector: ".nav-btn-js",
+        },
+      });
+
+      const actionBtn = document.querySelector(".nav-btn-js");
+      actionBtn.addEventListener("click", () => {
+        if (!revealerNav.isRevealed()) {
+          revealerNav.reveal();
+          actionBtn.setAttribute("data-open", true);
+        } else {
+          revealerNav.hide();
+          actionBtn.setAttribute("data-open", false);
+        }
+      });
+    });
+
+    const gallery = document.getElementById("gallery");
+
+    window.onmousemove = (e) => {
+      const mouseX = e.clientX,
+        mouseY = e.clientY;
+
+      const xDecimal = mouseX / window.innerWidth,
+        yDecimal = mouseY / window.innerHeight;
+
+      const maxX = gallery.offsetWidth - window.innerWidth,
+        maxY = gallery.offsetHeight - window.innerHeight;
+
+      const panX = maxX * xDecimal * -1,
+        panY = maxY * yDecimal * -1;
+
+      gallery.animate(
+        {
+          transform: `translate(${panX}px, ${panY}px)`,
+        },
+        {
+          duration: 4000,
+          fill: "forwards",
+          easing: "ease",
+        }
+      );
+    };
+
+    const radius = 300,
+      maxScale = 3,
+      blocks = document.querySelectorAll(".block"),
+      radius2 = radius * radius,
+      container = document.querySelector("#gallery");
+
+    blocks.forEach((block) => {
+      let b = block.getBoundingClientRect();
+      (block.cx = b.left + b.width / 2 + window.pageXOffset),
+        (block.cy = b.top + b.height / 2 + window.pageYOffset);
+
+      block.tween = gsap
+        .to(block, { scale: maxScale, ease: "power1.in", paused: true })
+        .progress(1)
+        .progress(0);
+    });
+
+    document.addEventListener("mousemove", (e) => {
+      let i = blocks.length,
+        dx,
+        dy,
+        block;
+      while (i--) {
+        block = blocks[i];
+        dx = (block.cx - e.pageX) ** 2;
+        dy = (block.cy - e.pageY) ** 2;
+        block.tween.progress(1 - (dx + dy) / radius2);
+      }
+    });
+
+    function createGGCursor(event) {
+      let el = document.getElementById("ggtext");
+      el.style.top = event.clientY + 100 + "px";
+      el.style.left = event.clientX - 300 + "px";
+    }
+
+    function createGemCursor(event) {
+      let el = document.getElementById("gemtext");
+      el.style.top = event.clientY - 600 + "px";
+      el.style.left = event.clientX - 800 + "px";
+    }
+
+    function createLstdCursor(event) {
+      let el = document.getElementById("lstdtext");
+      el.style.top = event.clientY + "px";
+      el.style.left = event.clientX - 1000 + "px";
+    }
+
+    function createSubwayCursor(event) {
+      let el = document.getElementById("subwaytext");
+      el.style.top = event.clientY + "px";
+      el.style.left = event.clientX + "px";
+    }
+
+    function createRaulCursor(event) {
+      let el = document.getElementById("raultext");
+      el.style.top = event.clientY - 400 + "px";
+      el.style.left = event.clientX + "px";
+    }
+
+    document.getElementById("gg").addEventListener("mousemove", createGGCursor);
+    document
+      .getElementById("gem")
+      .addEventListener("mousemove", createGemCursor);
+    document
+      .getElementById("lstd")
+      .addEventListener("mousemove", createLstdCursor);
+    document
+      .getElementById("subwayinn")
+      .addEventListener("mousemove", createSubwayCursor);
+    document
+      .getElementById("raul")
+      .addEventListener("mousemove", createRaulCursor);
+  </script>
+</html>
