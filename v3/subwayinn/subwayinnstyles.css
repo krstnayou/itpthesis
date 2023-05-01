@@ -141,6 +141,17 @@ img {
   text-align: center;
 }
 
+#about {
+  color: #000;
+  width: 85%;
+  margin-top: 100px;
+}
+
+h2:hover {
+  color: black;
+  text-decoration: underline;
+}
+
 h1 {
   font-family: kepler-std-condensed-display, serif;
   font-weight: 400;
@@ -302,6 +313,10 @@ input[type="range"] {
   }
 }
 
+a {
+  text-decoration: none;
+}
+
 iframe {
   width: 100%;
   height: 800px;
@@ -311,6 +326,12 @@ header {
   position: relative;
   display: flex;
   justify-content: space-between;
+}
+
+#sources {
+  width: 40vw;
+  margin-top: 180px;
+  margin-left: 300px;
 }
 
 .header__button {
@@ -404,15 +425,6 @@ header {
   -webkit-box-shadow: 0px 12px 29px -4px rgba(198, 228, 33, 1);
   -moz-box-shadow: 0px 12px 29px -4px rgba(198, 228, 33, 1);
   box-shadow: 0px 12px 29px -4px rgba(198, 228, 33, 1);
-}
-
-a:hover {
-  color: rgb(23, 39, 73);
-}
-
-a {
-  color: black;
-  text-decoration: none;
 }
 
 #div1 {
