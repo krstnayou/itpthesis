@@ -6,118 +6,298 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
 
+    <link rel="icon" type="image/x-icon" href="../404.png" />
+
     <link rel="stylesheet" href="goldengatestyles.css" />
-    <link rel="stylesheet" href="https://use.typekit.net/zif0pwl.css" />
-    <link rel="stylesheet" href="https://use.typekit.net/zif0pwl.css" />
-    <link rel="icon" type="image/x-icon" href="img/favicon.png" />
+    <link rel="stylesheet" href="https://use.typekit.net/why0zpc.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,300;0,400;0,500;0,600;1,300&family=Inter:wght@100;200;300;600&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap"
+      rel="stylesheet"
+    />
+
+    <script src="../libraries/p5.min.js"></script>
+    <script src="../libraries/p5.sound.min.js"></script>
+    <script src="https://unpkg.co/gsap@3/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/circular-revealer@0.0.8/dist/index.iife.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/simple-parallax-js@5.5.1/dist/simpleParallax.min.js"></script>
+    <script src="https://cdn.rawgit.com/bit101/quicksettings/master/quicksettings.js"></script>
+    <script src="https://cdn.rawgit.com/bitcraftlab/p5.gui/master/libraries/p5.gui.js"></script>
+    <script src="./script.js"></script>
+
     <title>GOLDEN GATE FANCY FRUITS & VEGETABLES</title>
   </head>
   <body>
     <header>
-      <div id="left">
-        <h1>GOLDEN GATE FANCY FRUITS & VEGETABLES</h1>
-        <h4>1939-</h4>
+      <div id="home">
+        <a href="../landing/index.html"><h3 id="go">404:HOME</h3></a>
       </div>
-      <div id="middle">
-        <h3>2080 Flatbush Ave, Brooklyn</h3>
+
+      <div>
+        <button class="header__button nav-btn-js" type="button"></button>
+        <nav class="header__nav nav-js" data-active="false">
+          <ul class="header__menu">
+            <h2>INDEX</h2>
+            <li class="header__menu-item">
+              <a href="../gem spa/gemspa.html"><h2>(01) GEM SPA</h2></a>
+              <a href="../lstd/lstd.html"><h2>(02) LOVE SAVES THE DAY</h2></a>
+              <a href="../raul/raul.html"><h2>(03) RAUL CANDY STORE</h2></a>
+              <a href="../golden gate/goldengate.html">
+                <h2>(04) GOLDEN GATE FANCY FRUITS & VEGETABLES</h2>
+              </a>
+              <a href="../subwayinn/subwayinn.html">
+                <h2>(05) SUBWAY INN</h2>
+              </a>
+
+              <h3 id="about">
+                404: Forget Me Not is a project by Kristina You created as her
+                thesis project at NYU's ITP program in 2023. It is a project
+                about human stories, New York Cities, the effects of
+                gentrification, and preservation of memories. It tells the story
+                of five select NYC stores that have served neighborhoods for
+                countless years but have or on the verge of disappearing. 404
+                was created as an attempt to create a space for the stories that
+                were created at these locations to live on forever if only on
+                the web.
+              </h3>
+            </li>
+          </ul>
+        </nav>
       </div>
     </header>
 
-    <div id="rules">
-      <img src="img/6.jpg" />
-      <div id="container">
-        <div id="first">
-          <h4>
-            JOHN CORTESE WAS A WORLD WAR II VETERAN WHO SERVED IN THE INVASION
-            OF NORMANY AND THE BATTLE OF THE BULGE AS PART OF THE 551ST FIELD
-            ARTILLERY BATTALION.
-          </h4>
-          <h3>
-            Cortese’s grandfather opened Golden Gate Fancy Fruits at 2080
-            Flatbush Avenue in 1939 and until the coronavirus crisis, Cortese
-            was still manning it.
-          </h3>
-        </div>
-
-        <div id="second">
-          <h4>
-            JOHN WOKE UP EVERY MORNING AT 7 A.M. AND RAN THE STORE HIMSELF AT
-            GOLDEN GATE FANCY FRUITS AND VEGETABLES, ON THE BORDER OF FLATLANDS
-            AND MILL BASIN IN SOUTH BROOKLYN.
-          </h4>
-          <h3>
-            He has been working there since his father opened the place in 1939.
-            “When you come in here, it’s still 1939,” he said. “Older people get
-            flashbacks when they walk in.”
-          </h3>
-        </div>
+    <div id="top">
+      <div id="left">
+        <p>1939-</p>
       </div>
-      <img src="img/7.jpg" />
-
-      <div id="container">
-        <div id="third">
-          <h4>
-            MR. CORTESE TOOK OVER FROM HIS FATHER IN 1960 AND LATER BOUGHT THE
-            BUILDING, WHICH HAD ENABLED HIM TO STAY IN BUSINESS.
-          </h4>
-          <h3>
-            “It hasn’t changed since then,” he said. “Once, I was going to redo
-            the storefront, but my accountant said, ‘Why? Then the landlord will
-            expect a new ceiling, new walls, new everything.’ And I’m glad I
-            never did, because now it’s an antique.”
-          </h3>
-        </div>
-
-        <div id="fourth">
-          <h4>
-            THE WOOD FLOOR, WITH ITS NARROW BOARDS IS ORIGINAL, AS IS THE TIN
-            CEILING. CANS OF GOYA BEANS AND REDPACK CRUSHED TOMATOES SAT ON
-            PAINTED WOODEN SHELVES.
-          </h4>
-          <h3>
-            Produce was displayed beautifully on angled stands and atop wooden
-            crates that line both sides of the store. Two scales still hang from
-            the ceiling, just in case of a power outage, said Cortese’s son,
-            John. Original Sunkist advertisements, old-school product labels
-            that John saved, and a plethora of vintage photographs decorated the
-            store.
-          </h3>
-        </div>
+      <div id="middle">
+        <h1>GOLDEN GATE FANCY FRUITS & VEGETABLES</h1>
       </div>
-
-      <div id="container">
-        <div id="image">
-          <img src="img/8.png" />
-        </div>
-        <div id="fifth">
-          <h3>
-            “I never considered this work,” Cortese says, looking around the
-            store, where most of the displays sit empty. Bags of fruit rest next
-            to him on the shelf, but he’s not in a hurry to tend to them. “Even
-            to this day, it’s just a hobby,” Cortese says.
-          </h3>
-        </div>
-      </div>
-
-      <div id="container">
-        <div id="sixth">
-          <h3>
-            “Sometimes, when a customer will come in, I won’t have what they’re
-            looking for,” Cortese says. “I’ll tell them to come back the next
-            day, and I’ll have it. Provided it meets my expectations.”
-            <br />
-            <br />
-            Mr Cortese passed away in 2020 at the age of 95.
-          </h3>
-        </div>
-        <div id="image">
-          <img src="img/10.jpg" />
-        </div>
+      <div id="right">
+        <h6>
+          2080 FLATBUSH AVE
+          <br />
+          BROOKLY, NY
+        </h6>
       </div>
     </div>
+
+    <div id="fullimage">
+      <img class="full" src="../golden gate/img/6.jpg" />
+    </div>
+    <div id="subtext">
+      <h3>
+        JAMES AND KARLA MURRAY/ STORE FRONT: THE DISAPPEARING FACE OF NEW YORK
+      </h3>
+    </div>
+
+    <div class="fade-in" id="left-text">
+      <p>
+        JOHN CORTESE WAS A WORLD WAR II VETERAN WHO SERVED IN THE INVASION OF
+        NORMANY AND THE BATTLE OF THE BULGE AS PART OF THE 551ST FIELD ARTILLERY
+        BATTALION.
+      </p>
+      <h6>
+        Cortese’s grandfather opened Golden Gate Fancy Fruits at 2080 Flatbush
+        Avenue in 1939 and until the coronavirus crisis, Cortese was still
+        manning it.
+      </h6>
+    </div>
+
+    <div class="fade-in" id="right-text">
+      <p>
+        JOHN WOKE UP EVERY MORNING AT 7 A.M. AND RAN THE STORE HIMSELF AT GOLDEN
+        GATE FANCY FRUITS AND VEGETABLES, ON THE BORDER OF FLATLANDS AND MILL
+        BASIN IN SOUTH BROOKLYN.
+      </p>
+      <h6>
+        He has been working there since his father opened the place in 1939.
+        “When you come in here, it’s still 1939,” he said. “Older people get
+        flashbacks when they walk in.”
+      </h6>
+    </div>
+
+    <div id="fullimage">
+      <img class="full" src="../golden gate/img/7.jpg" />
+      <div id="subtext">
+        <h3>GARY HE/EATER.COM</h3>
+      </div>
+    </div>
+
+    <div class="fade-in" id="left-text">
+      <p>
+        MR. CORTESE TOOK OVER FROM HIS FATHER IN 1960 AND LATER BOUGHT THE
+        BUILDING, WHICH HAD ENABLED HIM TO STAY IN BUSINESS.
+      </p>
+      <h6>
+        “It hasn’t changed since then,” he said. “Once, I was going to redo the
+        storefront, but my accountant said, ‘Why? Then the landlord will expect
+        a new ceiling, new walls, new everything.’ And I’m glad I never did,
+        because now it’s an antique.”
+      </h6>
+    </div>
+
+    <div id="img-right">
+      <img class="rightparallax" src="img/8.png" />
+      <div id="subtext">
+        <h3>
+          JAMES AND KARLA MURRAY/ STORE FRONT: THE DISAPPEARING FACE OF NEW YORK
+        </h3>
+      </div>
+    </div>
+
+    <div class="fade-in" id="right-text">
+      <p>
+        THE WOOD FLOOR, WITH ITS NARROW BOARDS IS ORIGINAL, AS IS THE TIN
+        CEILING. CANS OF GOYA BEANS AND REDPACK CRUSHED TOMATOES SAT ON PAINTED
+        WOODEN SHELVES.
+      </p>
+      <h6>
+        Produce was displayed beautifully on angled stands and atop wooden
+        crates that line both sides of the store. Two scales still hang from the
+        ceiling, just in case of a power outage, said Cortese’s son, John.
+        Original Sunkist advertisements, old-school product labels that John
+        saved, and a plethora of vintage photographs decorated the store.
+      </h6>
+    </div>
+
+    <div class="fade-in" id="pulloutquote">
+      <p>JOHN CORTESE, 2020</p>
+      <h5>
+        “I never considered this work,” Cortese says, looking around the store,
+        where most of the displays sit empty. Bags of fruit rest next to him on
+        the shelf, but he’s not in a hurry to tend to them. “Even to this day,
+        it’s just a hobby,” Cortese says.
+      </h5>
+    </div>
+
+    <div id="grid-container">
+      <img id="grid-item" src="../golden gate/img/1.gif" />
+      <img id="grid-item" src="../golden gate/img/2.gif" />
+      <div id="subtext">
+        <h3>SECRETS OF NEW YORK-GEM SPA</h3>
+      </div>
+    </div>
+
+    <div class="fade-in" id="pulloutquote">
+      <p>JOHN CORTESE, 2020</p>
+      <h5>
+        “Sometimes, when a customer will come in, I won’t have what they’re
+        looking for,” Cortese says. “I’ll tell them to come back the next day,
+        and I’ll have it. Provided it meets my expectations.”
+      </h5>
+      <h5>Mr Cortese passed away in 2020 at the age of 95.</h5>
+    </div>
+
+    <div id="img-left">
+      <img class="leftparallax" src="img/5.jpg" />
+      <div id="subtext">
+        <h3>GARY HE/EATER.COM</h3>
+      </div>
+    </div>
+
+    <div id="maindiv">
+      <div id="div1">
+        &nbsp;
+        <a href="#footer">
+          <h4 id="marquee">
+            SEE THE ICONIC GOLDEN GATE FANCY FRUITS & VEGETABLES SIGN IN MOTION
+          </h4>
+          <h4 id="marquee">
+            SEE THE ICONIC GOLDEN GATE FANCY FRUITS & VEGETABLES SIGN IN MOTION
+          </h4>
+          <h4 id="marquee">
+            SEE THE ICONIC GOLDEN GATE FANCY FRUITS & VEGETABLES SIGN IN MOTION
+          </h4>
+          <h4 id="marquee">
+            SEE THE ICONIC GOLDEN GATE FANCY FRUITS & VEGETABLES SIGN IN MOTION
+          </h4>
+          <h4 id="marquee">
+            SEE THE ICONIC GOLDEN GATE FANCY FRUITS & VEGETABLES SIGN IN MOTION
+          </h4>
+          <h4 id="marquee">
+            SEE THE ICONIC GOLDEN GATE FANCY FRUITS & VEGETABLES SIGN IN MOTION
+          </h4>
+        </a>
+      </div>
+    </div>
+
     <div id="footer">
       <!-- <iframe src="https://editor.p5js.org/kristinayou/full/4-JpXfioR"></iframe> -->
       <script src="sketch.js"></script>
     </div>
+
+    <div id="bottom">
+      <a href="../landis/landis.html"><p id="next">NEXT</p></a>
+      <a href="../golden gate/goldengatestories.html">
+        <p id="tell">SHARE YOUR GOLDEN GATE FANCY FRUITS & VEGETABLES STORY</p>
+      </a>
+      <p id="learn">LEARN MORE</p>
+    </div>
+
+    <script>
+      const faders = document.querySelectorAll(".fade-in");
+
+      const appearOptions = {
+        threshold: 1,
+        rootMargin: "0px 0px -100px 0px",
+      };
+
+      const appearOnScroll = new IntersectionObserver(function (
+        entries,
+        appearOnScroll
+      ) {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) {
+            return;
+          } else {
+            entry.target.classList.add("appear");
+            appearOnScroll.unobserve(entry.target);
+          }
+        });
+      },
+      appearOptions);
+
+      faders.forEach((fader) => {
+        appearOnScroll.observe(fader);
+      });
+
+      var image = document.getElementsByClassName("full");
+      new simpleParallax(image, {
+        delay: 0.6,
+        transition: "cubic-bezier(0,0,0,1)",
+      });
+
+      var rightimage = document.getElementsByClassName("rightparallax");
+      new simpleParallax(rightimage, {
+        overflow: true,
+      });
+
+      var leftimage = document.getElementsByClassName("leftparallax");
+      new simpleParallax(leftimage, {
+        overflow: true,
+      });
+
+      document.addEventListener("DOMContentLoaded", () => {
+        const revealerNav = window.revealer({
+          revealElementSelector: ".nav-js",
+          options: {
+            anchorSelector: ".nav-btn-js",
+          },
+        });
+
+        const actionBtn = document.querySelector(".nav-btn-js");
+        actionBtn.addEventListener("click", () => {
+          if (!revealerNav.isRevealed()) {
+            revealerNav.reveal();
+            actionBtn.setAttribute("data-open", true);
+          } else {
+            revealerNav.hide();
+            actionBtn.setAttribute("data-open", false);
+          }
+        });
+      });
+    </script>
   </body>
 </html>
