@@ -101,6 +101,10 @@ textarea {
   width: 100%;
 }
 
+.submissions {
+  position: absolute;
+}
+
 #submit {
   margin-top: 20px;
   background-color: #d8e5f3;

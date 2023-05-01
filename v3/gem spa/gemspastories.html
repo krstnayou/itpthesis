@@ -75,30 +75,53 @@
     </div>
 
     <script>
-      var submissions = [];
+      	var submissions = [];
+		var positions = [];
 
-      function displayText() {
-        var input = document.getElementById("textInput").value;
-        var now = new Date();
-        var submission = {
-          text: input,
-          date: now,
-        };
-        submissions.push(submission);
-        displayAllSubmissions();
-        document.getElementById("textInput").value = "";
-      }
+		function displayText() {
+			var input = document.getElementById("textInput").value;
+			var now = new Date();
+			var submission = {
+				text: input,
+				date: now
+			};
+			submissions.push(submission);
+			displayAllSubmissions();
+			document.getElementById("textInput").value = "";
+		}
 
-      function displayAllSubmissions() {
-        var output = document.getElementById("output");
-        output.innerHTML = "";
-        for (var i = 0; i < submissions.length; i++) {
-          var submission = submissions[i];
-          var text = submission.text;
-          var date = submission.date;
-          output.innerHTML += date.toLocaleString() + "<h3>" + text + "</h3>";
-        }
-      }
+		function displayAllSubmissions() {
+			var output = document.getElementById("output");
+			output.innerHTML = "";
+			for (var i = 0; i < submissions.length; i++) {
+				var submission = submissions[i];
+				var text = submission.text;
+				var date = submission.date;
+				var left, top, overlap;
+				do {
+					left = Math.floor(Math.random() * (window.innerWidth - 200)); // generate random left position
+					top = Math.floor(Math.random() * (window.innerHeight - 200)); // generate random top position
+					overlap = checkOverlap(left, top);
+				} while (overlap); // keep generating new positions until there is no overlap
+				var html = "<h3 class='submission' style='left: " + left + "px; top: " + top + "px;'>" + text + " - submitted on " + date.toLocaleString() + "</h3>";
+				output.innerHTML += html;
+				positions.push({
+					left: left,
+					top: top
+				});
+			}
+		}
+
+		function checkOverlap(left, top) {
+			for (var i = 0; i < positions.length; i++) {
+				var position = positions[i];
+				if (left >= position.left - 180 && left <= position.left + 180 &&
+				    top >= position.top - 80 && top <= position.top + 80) {
+					return true; // overlap detected
+				}
+			}
+			return false; // no overlap
+		}
     </script>
   </body>
 </html>
