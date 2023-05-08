@@ -118,6 +118,12 @@ h2:hover {
 }
 
 .block:hover {
+  -webkit-box-shadow: -1px -1px 31px -6px rgba(195, 223, 232, 1);
+  -moz-box-shadow: -1px -1px 31px -6px rgba(195, 223, 232, 1);
+  box-shadow: -1px -1px 31px -6px rgba(195, 223, 232, 1);
+}
+
+.block:hover {
   z-index: 1.5;
 }
 

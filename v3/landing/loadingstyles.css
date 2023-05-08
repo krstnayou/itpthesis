@@ -25,6 +25,25 @@ h1 {
   margin-left: 20vw;
 }
 
+#enter {
+  position: absolute;
+  margin-left: 65vw;
+  margin-top: 800px;
+  animation: blink 2s infinite;
+}
+
+@keyframes blink {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
 span {
   border-right: 0.05em solid;
   animation: caret 0.001s steps(0.001);
