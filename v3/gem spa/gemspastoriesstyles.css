@@ -101,8 +101,10 @@ textarea {
   width: 100%;
 }
 
-.submissions {
+.submission {
   position: absolute;
+  padding: 50px;
+  z-index: 100;
 }
 
 #submit {
@@ -129,6 +131,8 @@ textarea {
   font-style: normal;
   font-size: 18px;
   color: rgb(0, 0, 0);
+  display: flex;
+  margin: 100px;
 }
 
 a {
@@ -290,7 +294,7 @@ header {
   background-color: #c6e421;
   border: 0;
   cursor: pointer;
-  position: absolute;
+  position: fixed;
   right: 0;
   top: -18px;
   margin: 50px;
