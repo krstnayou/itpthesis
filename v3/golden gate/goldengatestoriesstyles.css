@@ -290,7 +290,7 @@ header {
   background-color: #c6e421;
   border: 0;
   cursor: pointer;
-  position: absolute;
+  position: fixed;
   right: 0;
   top: -18px;
   margin: 50px;
