@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>horizontal scroll sections</title>
+    <link rel="stylesheet" href="./styles.css" />
+    <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.0.6/dist/locomotive-scroll.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/circular-revealer@0.0.8/dist/index.iife.js"></script>
+    <link rel="stylesheet" href="https://use.typekit.net/why0zpc.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,300;0,400;0,500;0,600;1,300&family=Inter:wght@100;200;300;600&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header>
+<div id="landing">
+        <a href="../landing/landing.html"><h6 id="go">404:HOME</h6></a>
+      </div>
+    </header>
+    <div class="blocks">
+      <div class="block init" data-block-section="1" data-href="home">
+        <div class="block__title"><h2>small businesses of new york</h2></div>
+        <div class="block__number"><h3>01</h3></div>
+      </div>
+      <div class="block init" data-block-section="2" data-href="collection">
+        <div class="block__title"><h2>how can i help?</h2></div>
+        <div class="block__number"><h3>02</h3></div>
+      </div>
+      <div class="block init" data-block-section="3" data-href="material">
+        <div class="block__title"><h2>Be aware and participate</h2></div>
+        <div class="block__number"><h3>03</h3></div>
+      </div>
+      <div class="block init" data-block-section="4" data-href="production">
+        <div class="block__title"><h2>resources</h2></div>
+        <div class="block__number"><h3>04</h3></div>
+      </div>
+    <main data-scroll-container>
+      <div class="wrap" data-scroll-section>
+        <section class="section home" data-block-section="1" id="home">
+          <img src="img/4.png">
+          <h5>
+            It is a harder time for small businesses in New York City moreso
+            than ever - they are facing the biggest rent increases in the city,
+            lack of protections for commercial tenants, a burden which mostly
+            affects store owners in predominantly Black, Latino and Asian
+            neighborhoods.
+            <br />
+            <br />
+            From the corner bodega to the local hardware store, small businesses
+            keep New York City running 24/7. New small businesses are popping up
+            everywhere as evidenced by the fact that 1 in 9 businesses in
+            operation today opened in the last year.
+          </h5>
+        </section>
+        <section
+          class="section collection"
+          data-block-section="2"
+          id="collection"
+        >
+        <img src="img/5.png">
+          <h5>
+            Shopping locally and showing up for your neighbors, especially
+            during special times such as May - Small Business Month - is an
+            extremely important way to show support. With every dollar that is
+            spent at a small business, an estimated 70 cents stay within the
+            community which translates directly into jobs for your neighbors and
+            creation of attractions that lure visitors from all over the world
+            to your local community.
+          </h5>
+        </section>
+        <section class="section material" data-block-section="3" id="material">
+          <img src="img/1.png">
+          <h5>
+            There is more to supporting small businesses than being patrons - it
+            is important to stay informed on city and community laws, funds,
+            organizations that directly affect the businesses as well.
+            <br />
+            <br />
+            For example, mayoral leadership can drastically impact the well
+            being of small businesses starting from helping them contract with
+            city government agencies, or launching a loan fund to help out small
+            businesses that are in need of support. Stay informed and vote for
+            local government leaders!
+          </h5>
+        </section>
+        <section
+          class="section production"
+          data-block-section="4"
+          id="production"
+        >
+        <img src="img/6.png">
+          <a href="https://shopyourcity.cityofnewyork.us/syc-citywide/">
+            <h5 id="links">→SHOP YOUR LOCAL BUSINESS DIRECTORY</h5>
+          </a>
+          <a href="https://www.nytimes.com/2020/11/23/business/smallbusiness/how-to-support-small-businesses.html"><h5 id="links">
+            →9 WAYS TO SUPPORT SMALL BUSINESSES</h5>
+          </a>
+          <a href="https://www.amny.com/oped/new-yorkers-must-show-their-local-businesses-some-love-during-small-business-month/"><h5 id="links">
+            →NY SMALL BUSINESS MONTH</h5>
+            <a href="https://www.nypl.org/help/services/smallbiz/services/browse"><h5 id="links">
+            →SMALL BUSINESS SERVICES DIRECTORY</h5>
+          </a>
+          <a href="https://www.nypl.org/help/services/smallbiz"><h5 id="links">
+            →NYC SMALL BUSINESS RESOURCE CENTER</h5>
+          </a>
+          <a href="https://www.villagepreservation.org/campaign/small-business/"><h5 id="links">
+            →VILLAGE PRESERVATION-SUPPORTING SMALL BUSINESSES</h5>
+          </a>
+        </section>
+      </div>
+    </main>
+  </body>
+  <script>
+    const scroll = new LocomotiveScroll({
+      el: document.querySelector("[data-scroll-container]"),
+      smooth: true,
+      direction: "horizontal",
+    });
+
+    let blocks = document.querySelectorAll(".block[data-block-section]");
+    scroll.on("scroll", (args) => {
+      blocks.forEach((block) => {
+        let attr = block.getAttribute("data-block-section");
+        let section = document.querySelector(
+          `section[data-block-section='${attr}']`
+        );
+
+        if (section.getBoundingClientRect().left <= block.offsetWidth * attr) {
+          block.classList.add("fixed");
+          block.classList.remove("init");
+          block.classList.remove("active");
+          block.style.left = "";
+        } else if (
+          section.getBoundingClientRect().left >=
+          window.innerWidth - block.offsetWidth * (blocks.length - attr)
+        ) {
+          block.classList.add("init");
+          block.classList.remove("active");
+          block.classList.remove("fixed");
+          block.style.left = "";
+        } else {
+          block.classList.add("active");
+          block.classList.remove("init");
+          block.classList.remove("fixed");
+        }
+
+        if (block.classList.contains("active")) {
+          block.style.left = section.getBoundingClientRect().left + "px";
+        }
+      });
+    });
+
+    document.addEventListener("DOMContentLoaded", () => {
+      const revealerNav = window.revealer({
+        revealElementSelector: ".nav-js",
+        options: {
+          anchorSelector: ".nav-btn-js",
+        },
+      });
+
+      const actionBtn = document.querySelector(".nav-btn-js");
+      actionBtn.addEventListener("click", () => {
+        if (!revealerNav.isRevealed()) {
+          revealerNav.reveal();
+          actionBtn.setAttribute("data-open", true);
+        } else {
+          revealerNav.hide();
+          actionBtn.setAttribute("data-open", false);
+        }
+      });
+    });
+  </script>
+</html>
