@@ -32,7 +32,7 @@
   <body>
     <header>
       <div id="home">
-        <a href="../landing/index.html"><h3 id="go">404:HOME</h3></a>
+        <a href="../landing/landing.html"><h3 id="go">404:HOME</h3></a>
       </div>
 
       <div>
@@ -88,9 +88,7 @@
       <img class="full" src="../golden gate/img/6.jpg" />
     </div>
     <div id="subtext">
-      <h3>
-        JAMES AND KARLA MURRAY/ STORE FRONT: THE DISAPPEARING FACE OF NEW YORK
-      </h3>
+      <h3>NICOLE CRAINE/ THE NEW YORK TIMES</h3>
     </div>
 
     <div class="fade-in" id="left-text">
@@ -122,7 +120,7 @@
     <div id="fullimage">
       <img class="full" src="../golden gate/img/7.jpg" />
       <div id="subtext">
-        <h3>GARY HE/EATER.COM</h3>
+        <h3>ABID SULTAN/BROOKLYN STOREFRONT</h3>
       </div>
     </div>
 
@@ -142,9 +140,7 @@
     <div id="img-right">
       <img class="rightparallax" src="img/8.png" />
       <div id="subtext">
-        <h3>
-          JAMES AND KARLA MURRAY/ STORE FRONT: THE DISAPPEARING FACE OF NEW YORK
-        </h3>
+        <h3>AUGUSTIN PASQUET/UNTAPPED CITIES</h3>
       </div>
     </div>
 
@@ -173,11 +169,11 @@
       </h5>
     </div>
 
-    <div id="grid-container">
+    <div id="grid-container" onmouseover="playAudio()" onmouseout="stopAudio()">
       <img id="grid-item" src="../golden gate/img/1.gif" />
       <img id="grid-item" src="../golden gate/img/2.gif" />
       <div id="subtext">
-        <h3>SECRETS OF NEW YORK-GEM SPA</h3>
+        <h3>FAITH AND FRUIT NOURISH CATHOLIC MAN - CURRENT NEWS</h3>
       </div>
     </div>
 
@@ -194,8 +190,27 @@
     <div id="img-left">
       <img class="leftparallax" src="img/5.jpg" />
       <div id="subtext">
-        <h3>GARY HE/EATER.COM</h3>
+        <h3>AUGUSTIN PASQUET/UNTAPPED CITIES</h3>
       </div>
+    </div>
+
+    <div id="sources">
+      <h3><b>SOURCES</b></h3>
+      <h3>
+        MICHELLE YOUNG, "JOHN CORTESE, PROPRIETOR OF GOLDEN GATE FANCY FRUITS IN
+        BROOKLYN HAS PASSED AWAY", UNTAPPED NEW YORK
+      </h3>
+      <h3>
+        CORY KILGANNON, "A BROOKLYN GROCER'S RIPE YEARS", THE NEW YORK TIMES
+      </h3>
+      <h3>
+        JAMES AND KARLA MURRAY,"STORE FRONT: THE DISAPPEARING FACE OF NEW YORK"
+      </h3>
+      <h3>"FAITH AND FRUIT NOURSISH CATHOLIC MAN", CURRENT NEWS</h3>
+      <h3>
+        MELISSA MCCART,"THIS 80-YEAR-OLD BAR IS HOPING TO SURVIVE BY MOVING FOR
+        A THIRD TIME", EATER
+      </h3>
     </div>
 
     <div id="maindiv">
@@ -228,8 +243,10 @@
       <a href="../golden gate/goldengatestories.html">
         <p id="tell">SHARE YOUR GOLDEN GATE FANCY FRUITS & VEGETABLES STORY</p>
       </a>
-      <p id="learn">LEARN MORE</p>
-      <a href="../landis/landis.html"><p id="next">NEXT</p></a>
+      <a href="../support/support.html">
+        <p id="learn">LEARN MORE</p>
+      </a>
+      <a href="../lstd/lstdstories.html"><p id="next">NEXT</p></a>
     </div>
 
     <script>
@@ -294,6 +311,20 @@
           }
         });
       });
+
+      var audio;
+
+      function playAudio() {
+        audio = new Audio("gg1.mp3");
+        audio.play();
+      }
+
+      function stopAudio() {
+        if (audio) {
+          audio.pause();
+          audio.currentTime = 0;
+        }
+      }
     </script>
   </body>
 </html>

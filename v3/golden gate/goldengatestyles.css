@@ -58,7 +58,7 @@ img {
   margin-top: 100px;
 }
 
-h2:hover {
+a h2:hover {
   color: black;
   text-decoration: underline;
 }
@@ -176,6 +176,12 @@ h3 {
   color: rgb(255, 255, 255);
   padding-left: 20px;
   padding-top: 10px;
+}
+
+#sources {
+  width: 40vw;
+  margin-top: 180px;
+  margin-left: 300px;
 }
 
 h4 {

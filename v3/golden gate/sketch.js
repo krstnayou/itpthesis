@@ -33,8 +33,8 @@ function draw() {
   
   translate(0, 100);
 	noFill();
-  let rotX = mouseX/20;
-  let rotY = mouseY/30;
+  let rotX = mouseX/10;
+  let rotY = mouseY/20;
   
   console.log(rotX);
   for(let i =0; i< pts.length; i++){      
