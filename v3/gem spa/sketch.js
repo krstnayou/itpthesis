@@ -125,7 +125,7 @@ function draw() {
   stroke(128);
 
 //  clear();
-  fill(mouseX,100,100);
+  fill(mouseX/3,100,100);
 noStroke();
 
 

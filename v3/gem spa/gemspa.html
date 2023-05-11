@@ -33,7 +33,7 @@
   <body>
     <header>
       <div id="home">
-        <a href="../landing/index.html"><h3 id="go">404:HOME</h3></a>
+        <a href="../landing/landing.html"><h3 id="go">404:HOME</h3></a>
       </div>
 
       <div>
@@ -169,18 +169,13 @@
       </div>
     </div>
 
-    <div id="grid-container">
+    <div id="grid-container" onmouseover="playAudio()" onmouseout="stopAudio()">
       <img id="grid-item" src="../gem spa/img/1.gif" />
       <img id="grid-item" src="../gem spa/img/3.gif" />
       <img id="grid-item" src="../gem spa/img/2.gif" />
       <img id="grid-item" src="../gem spa/img/4.gif" />
       <div id="subtext">
         <h3>SECRETS OF NEW YORK-GEM SPA</h3>
-      </div>
-      <div style="visibility: hidden">
-        <!-- <audio autoplay loop>
-          <source src="gem1.mp3" />
-        </audio> -->
       </div>
     </div>
 
@@ -251,8 +246,10 @@
       <a href="../gem spa/gemspastories.html">
         <p id="tell">SHARE YOUR GEM SPA STORY</p>
       </a>
-      <p id="learn">LEARN MORE</p>
-      <a href="../lstd/lstd.html"><p id="next">NEXT</p></a>
+      <a href="../support/support.html">
+        <p id="learn">LEARN MORE</p>
+      </a>
+      <a href="../golden gate/goldengate.html"><p id="next">NEXT</p></a>
     </div>
 
     <script>
@@ -317,6 +314,20 @@
           }
         });
       });
+
+      var audio;
+
+      function playAudio() {
+        audio = new Audio("gem1.mp3");
+        audio.play();
+      }
+
+      function stopAudio() {
+        if (audio) {
+          audio.pause();
+          audio.currentTime = 0;
+        }
+      }
     </script>
   </body>
 </html>
