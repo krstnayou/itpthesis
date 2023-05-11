@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
+
+    <link rel="icon" type="image/x-icon" href="../404.png" />
+
+    <link rel="stylesheet" href="lstdstyles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,300;0,400;0,500;0,600;1,300&family=Inter:wght@100;200;300;600&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="https://use.typekit.net/why0zpc.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,300;0,400;0,500;0,600;1,300&family=Inter:wght@100;200;300;400;600&display=swap"
+      rel="stylesheet"
+    />
+    <script src="../libraries/p5.min.js"></script>
+    <script src="../libraries/p5.sound.min.js"></script>
+    <script src="https://unpkg.co/gsap@3/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/circular-revealer@0.0.8/dist/index.iife.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/simple-parallax-js@5.5.1/dist/simpleParallax.min.js"></script>
+    <script src="sketch.js"></script>
+
+    <title>LOVE SAVES THE DAY</title>
+  </head>
+  <body>
+    <header>
+      <div id="home">
+        <a href="../landing/landing.html"><h3 id="go">404:HOME</h3></a>
+      </div>
+
+      <div>
+      <div>
+ <button class="header__button nav-btn-js" type="button"></button>
+        <nav class="header__nav nav-js" data-active="false">
+          <ul class="header__menu">
+            <h2>INDEX</h2>
+            <li class="header__menu-item">
+              <a href="../gem spa/gemspa.html"><h2>(01) GEM SPA</h2></a>
+              <a href="../lstd/lstd.html"><h2>(02) LOVE SAVES THE DAY</h2></a>
+              <a href="../raul/raul.html"><h2>(03) RAUL CANDY STORE</h2></a>
+              <a href="../golden gate/goldengate.html">
+                <h2>(04) GOLDEN GATE FANCY FRUITS & VEGETABLES</h2>
+              </a>
+              <a href="../subwayinn/subwayinn.html">
+                <h2>(05) SUBWAY INN</h2>
+              </a>
+
+              <h3 id="about">
+                404: Forget Me Not is a project by Kristina You created as her
+                thesis project at NYU's ITP program in 2023. It is a project
+                about human stories, New York Cities, the effects of
+                gentrification, and preservation of memories. It tells the story
+                of five select NYC stores that have served neighborhoods for
+                countless years but have or on the verge of disappearing. 404
+                was created as an attempt to create a space for the stories that
+                were created at these locations to live on forever if only on
+                the web.
+              </h3>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <div id="top">
+      <div id="left">
+        <p>1966-2008</p>
+      </div>
+      <div id="middle">
+        <h1>LOVE SAVES THE DAY</h1>
+      </div>
+      <div id="right">
+        <h6>
+          119 SECOND AVE.
+          <br />
+          NEW YORK, NY
+        </h6>
+      </div>
+    </div>
+
+    <div id="fullimage">
+      <img class="full" src="../lstd/img/1.jpg" />
+    </div>
+    <div id="subtext">
+      <h3>
+        JAMES AND KARLA MURRAY,STORE FRONT: THE DISAPPEARING FACE OF NEW YORK
+      </h3>
+    </div>
+
+    <div class="fade-in" id="left-text">
+      <p>
+        LOVE SAVES THE DAY OPENED IN 1966, IN A TIME KNOWN BY SOME AS THE AGE OF
+        AQUARIUS, IN A MANHATTAN NEIGHBORHOOD THAT WAS A HIPPIE HAVEN.
+      </p>
+      <h6>
+        The store was originally located down the street on East 7th Street and
+        I moved to this Second Avenue location in 1983. An employee painted the
+        sign and the storefront with a colorful pattern in 1990.
+      </h6>
+    </div>
+
+    <div id="img-left">
+      <img class="leftparallax" src="img/3.png" />
+      <div id="subtext">
+        <h3>
+          ARIELA B, YELP
+        </h3>
+      </div>
+    </div>
+
+    <div class="fade-in" id="pulloutquote">
+      <p>PARUL PATEL, 2020</p>
+      <h5>
+        "It endured as a psychedelic oasis even as the hippies disappeared and
+        the neighborhood, the East Village, was transformed into a pricier and
+        less scruffy place by the real estate boom that washed across many parts
+        of New York City.""
+      </h5>
+    </div>
+
+    <div id="owner">
+      <img class="full" src="../lstd/img/5.png.png" />
+    </div>
+    <div id="subtext">
+      <h3>
+        HIROKO MASUIKE, "END COMES FOR OUTPOST OF EAST VILLAGE COUNTERCULTURE", THE NEW YORK TIMES
+      </h3>
+    </div>
+
+    <div class="fade-in" id="right-text">
+      <p>TO SAY THE STORE WAS CLUTTERED WOULD BE AN UNDERSTATEMENT.</p>
+      <h6>
+        The store displays retro toys and objects evoking nostalgia across
+        generations. There are bellbottoms and platform shoes from the ’60s,
+        Fraggle Rock toys and Smurfs that came free with McDonald’s children’s
+        meals, old Playboy magazines, metal lunch boxes and copies of Life
+        magazine.
+      </h6>
+    </div>
+
+    <div class="fade-in" id="left-text">
+      <p>STORE CLOSINGS OFTEN ARE TIED TO RISING RENTS IN MANHATTAN.</p>
+      <h6>
+        But that is only one reason Love Saves the Day is shutting its doors.
+        Mr. Herson said the death in August of his wife, Leslie Herson, 65, who
+        started the store, left it without its soul. “It’s hard to carry on
+        without her,” said Mr. Herson, who will continue running a second store
+        with the same name in New Hope, Pa.
+      </h6>
+    </div>
+
+    <div id="img-right">
+      <img class="rightparallax" src="img/2.jpg" />
+      <div id="subtext">
+        <h3>JOHN BLOUGH,FLICKR</h3>
+      </div>
+    </div>
+
+    <div id="img-grid" onmouseover="playAudio()" onmouseout="stopAudio()">
+      <img id="lefthalf" src="../lstd/img/1.gif" />
+      <img id="righthalf" src="../lstd/img/2.gif" />
+
+      <div id="subtext">
+        <h3>COOL IN YOUR CODE, "LOVE SAVES THE DAY"</h3>
+      </div>
+    </div>
+
+    <div class="fade-in" id="pulloutquote">
+      <p>PARUL PATEL, 2020</p>
+      <h5>
+        “Her store was a destination before vintage clothing became a staple of
+        the hipster wardrobe. The rent on the original store was $95 a month;
+        When it closed it is $11,000.”
+      </h5>
+      <h5>
+        This East Village neighborhood has changed so much over the years and is
+        not really a neighborhood anymore as far as the people are concerned.
+        There used to be lots of mom and pop stores in the area and neighborhood
+        people would shop in them but most of the shops have been forced to
+        close because rents have gotten really high. .”
+      </h5>
+    </div>
+
+    <div id="img-left">
+      <img class="leftparallax" src="img/4.png" />
+      <div id="subtext">
+        <h3>A MEMORY OF LOVE SAVES THE DAY, EV GRIEVE</h3>
+      </div>
+    </div>
+
+    <div class="fade-in" id="pulloutquote">
+      <p>PARUL PATEL, 2020</p>
+      <h5>
+        “Now the East Village is more upscale and larger chain stores have
+        opened. New people are constantly moving into the neighbor- hood and
+        it's even become a tourist destination. .”
+      </h5>
+    </div>
+
+        <div id="sources">
+      <h3><b>SOURCES</b></h3>
+      <h3>
+        JOHN DEL SIGNORE, "A LAST LOOK INSIDE LOVE SAVES THE DAY", GOTHAMIST
+      </h3>
+      <h3>
+        LILY KOPPEL, "END COMES FOR OUTPOST OF EAST VILLAGE ICON COUNTERCULTURE", THE NEW YORK TIMES
+      </h3>
+      <h3>DOTTIE WILSON, "WHAT A (BAD) TRIP: LOVE SAVES THE DAY IS CLOSING", THE VILLAGER</h3>
+      <h3>
+        JAMES AND KARLA MURRAY,"STORE FRONT: THE DISAPPEARING FACE OF NEW YORK"
+      </h3>
+    </div>
+
+    <div id="maindiv">
+      <div id="div1">
+        &nbsp;
+        <a href="../lstd/lstd.html">
+          <h5 id="marquee">SHARE YOUR MEMORIES FROM LOVE SAVES THE DAY</h5>
+          <h5 id="marquee">SHARE YOUR MEMORIES FROM LOVE SAVES THE DAY</h5>
+          <h5 id="marquee">SHARE YOUR MEMORIES FROM LOVE SAVES THE DAY</h5>
+          <h5 id="marquee">SHARE YOUR MEMORIES FROM LOVE SAVES THE DAY</h5>
+          <h5 id="marquee">SHARE YOUR MEMORIES FROM LOVE SAVES THE DAY</h5>
+          <h5 id="marquee">SHARE YOUR MEMORIES FROM LOVE SAVES THE DAY</h5>
+        </a>
+      </div>
+    </div>
+
+
+
+    <div id="bottom">
+      <a href="../lstd/lstdstories.html">
+        <p id="tell">SHARE YOUR LOVE SAVES THE DAY STORY</p>
+      </a>
+      <a href="../support/support.html">
+      <p id="learn">LEARN MORE</p></a>
+      <a href="../raul/raul.html"><p id="next">NEXT</p></a>
+    </div>
+
+    <script>
+      const faders = document.querySelectorAll(".fade-in");
+
+      const appearOptions = {
+        threshold: 1,
+        rootMargin: "0px 0px -100px 0px",
+      };
+
+      const appearOnScroll = new IntersectionObserver(function (
+        entries,
+        appearOnScroll
+      ) {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) {
+            return;
+          } else {
+            entry.target.classList.add("appear");
+            appearOnScroll.unobserve(entry.target);
+          }
+        });
+      },
+      appearOptions);
+
+      faders.forEach((fader) => {
+        appearOnScroll.observe(fader);
+      });
+
+      var image = document.getElementsByClassName("full");
+      new simpleParallax(image, {
+        delay: 0.6,
+        transition: "cubic-bezier(0,0,0,1)",
+      });
+
+      var rightimage = document.getElementsByClassName("rightparallax");
+      new simpleParallax(rightimage, {
+        overflow: true,
+      });
+
+      var leftimage = document.getElementsByClassName("leftparallax");
+      new simpleParallax(leftimage, {
+        overflow: true,
+      });
+
+      document.addEventListener("DOMContentLoaded", () => {
+        const revealerNav = window.revealer({
+          revealElementSelector: ".nav-js",
+          options: {
+            anchorSelector: ".nav-btn-js",
+          },
+        });
+
+        const actionBtn = document.querySelector(".nav-btn-js");
+        actionBtn.addEventListener("click", () => {
+          if (!revealerNav.isRevealed()) {
+            revealerNav.reveal();
+            actionBtn.setAttribute("data-open", true);
+          } else {
+            revealerNav.hide();
+            actionBtn.setAttribute("data-open", false);
+          }
+        });
+      });
+
+      var audio;
+
+      function playAudio() {
+        audio = new Audio("love1.mp3");
+        audio.play();
+      }
+
+      function stopAudio() {
+        if (audio) {
+          audio.pause();
+          audio.currentTime = 0;
+        }
+      }
+    </script>
+  </body>
+</html>
